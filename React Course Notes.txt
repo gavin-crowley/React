@@ -1,0 +1,165 @@
+Complete React Tutorial (& Redux) 
+
+https://github.com/iamshaunjp/react-redux-complete-playlist
+
+#4
+use CDN, babel to render to DOM - all in one html file - simple output example
+
+#5
+basic example of state
+can use this or constructor method to define state
+
+#6
+react dev tools
+
+#7
+events - methods - do something in the DOM
+
+#8
+how this works / simple setState example
+
+this points to an instance of a class
+
+In react components this can be accessed inside the render(because it's an inbuilt react function) but not in class methods above (use an arrow function for these to access this)
+
+arrow functions 
+-bind the value of this to whatever is outside the function
+-take the value of this to be the value of the component
+
+#9
+Forms intro
+EXERCISE: enter text into form, have it output automatically, make sure page doesn't refresh
+
+#10
+create react app setup
+
+#11
+SPA discussion
+setup create react app
+
+#12
+simple nesting of one component inside another component
+
+#13
+simple props example + destructuring 
+EXERCISE: repeat
+
+#14
+passing a list of data into a component
+uses an array in state
+
+ const { ninjas } = this.props; destructured
+    // const ninjas = this.props.ninjas - not destructured
+
+GREAT EXAMPLE TO REFERENCE AND REPEAT
+
+#15
+Converted RC to FC
+
+Container components:
+-contain state
+-contain lifecycle hooks
+-not concerned with UI
+-use classes 
+
+UI components:
+-don't contain state
+-receive data from props
+-only concerned with UI
+-use functions
+-props are passed in as parameters, not using this
+
+#16
+Simple conditional example - uses ternary operator & if else
+
+#17
+Forms - add a new ninja to the list - like my 9-play exercise
+Good input output demo
+
+#18
+Adds the new ninja from 17 to the array - passes a function as a prop
+GOOD EXERCISE
+
+Spread operator used here:
+use case is creating a shallow copy of an object. Another use case is merging objects together
+
+#19
+Deleting ninjas
+ANOTHER GOOD ONE
+
+<button onClick={() => {deleteNinja(ninja.id)}}>Delete ninja</button>
+              {/*anonymous arrow function here means deleteNinja() doesn't automatically fire*/}
+
+
+#20
+Recap of so far + V DOM
+
+#21
+CSS in react  
+
+#22
+Lifecycle methods/hooks
+
+#23, #24
+Todo App steps:
+1. load in materialize cdn
+ <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+2. create dummy state data in root component, id / content
+
+3. create ui component to render todos with todos collection class on div
+
+4. pass todo data from root to ui using props
+
+5. map thru items in list and output in ui - use ternary + add key 
+
+commit
+
+6. add following to root:
+<div className="todo-app container">
+        <h1 className="center blue-text">Todo's</h1>
+
+7. setup delete todos on click:
+create function in root
+pass that function as a prop into Todos component
+add a click event on span
+id should log to console now 
+
+commit
+
+8. Use filter method to actually delete 
+put in new array
+write logic to find items for deletion
+set the state
+destructure key value name here
+
+commit
+
+9. Add form to add item:
+create file with class based component AddTodo, since it will have state
+add form in div with label and input
+write handlechange
+write handle submit - prev default
+nest this component in root
+should be able to log state of new todo to console now
+
+10. 
+Add new todo to array:
+make function AddTodo in root that will add todo to array
+add addTodo function to AddTodo component
+in AddTodo in handle submt, call AddTodo by passing state to it
+Add random id to new todo in func
+create new array and add new item to it
+then set state
+new todo should add now
+
+
+11. Empty form on return
+2 steps
+===============================================================================
+
+#25
+
+
+
