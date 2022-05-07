@@ -1,0 +1,14 @@
+{
+    "name": "my-next-blog",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "start": "next start"
+    },
+    "dependencies": {
+        "next": "^12.1.6",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0"
+    }
+}
