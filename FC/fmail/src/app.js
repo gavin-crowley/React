@@ -1,8 +1,10 @@
-const express = require("express")
-const app = express()
+import React from "react";
 
-app.get("/", (req, res) => {
-    res.end("foo")
-})
 
-module.exports = app
+
+const App = () => {
+  return ( <><div>Hello World!</div></> );
+}
+ 
+export default App;
+
