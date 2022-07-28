@@ -27,6 +27,9 @@
         }
 
         render() {
+          // const text = this.state.text;
+          console.log(this.state.text);
+          console.log(this.props.text);
           const text = 'text' in this.state ? this.state.text : this.props.text;
           return (
             <div>

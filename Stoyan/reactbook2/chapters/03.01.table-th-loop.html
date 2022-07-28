@@ -6,6 +6,15 @@
     <link rel="stylesheet" type="text/css" href="03.table.css" />
   </head>
   <body>
+    <!-- <table>
+      <thead>
+        <tr>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+        </tr>
+      </thead>
+    </table> -->
     <div id="app">
       <!-- my app renders here -->
     </div>
@@ -17,7 +26,7 @@
         render() {
           const headers = [];
           for (const title of this.props.headers) {
-            headers.push(<th>{title}</th>);
+            headers.push(<th key={Math.random()}>{title}</th>);
           }
           return (
             <table>
@@ -33,7 +42,7 @@
 
       ReactDOM.render(
         <Excel headers={headers} />,
-        document.getElementById('app'),
+        document.getElementById('app')
       );
     </script>
   </body>
