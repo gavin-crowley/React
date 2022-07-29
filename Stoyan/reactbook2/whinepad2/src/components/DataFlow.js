@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
 import Header from './Header';
 import Body from './Body';
@@ -8,13 +8,165 @@ import DataContext from '../contexts/DataContext';
 import RouteContext from '../contexts/RouteContext';
 import clone from '../modules/clone';
 
-let initialData = JSON.parse(localStorage.getItem('data'));
+// let initialData = JSON.parse(localStorage.getItem('data'));
+// console.log(initialData);
+
+let initialData = [
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  {
+    name: 'Gav',
+    year: '2022',
+    grape: 'Cabernet Franc',
+    rating: '4',
+    comments: 'Hey\n',
+  },
+  
+];
 
 // default example data, read from the schema
 if (!initialData) {
   initialData = [{}];
   Object.keys(schema).forEach(
-    (key) => (initialData[0][key] = schema[key].samples[0]),
+    (key) => (initialData[0][key] = schema[key].samples[0])
   );
 }
 
@@ -75,9 +227,9 @@ function DataFlow() {
   }
 
   return (
-    <div className="DataFlow">
-      <DataContext.Provider value={{data, updateData}}>
-        <RouteContext.Provider value={{route, updateRoute}}>
+    <div className='DataFlow'>
+      <DataContext.Provider value={{ data, updateData }}>
+        <RouteContext.Provider value={{ route, updateRoute }}>
           <Header onSearch={onSearch} />
           <Body>
             <Excel filter={filter} />

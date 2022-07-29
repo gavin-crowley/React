@@ -27,8 +27,13 @@
 
         function sort(e) {
           const column = e.target.cellIndex;
+          // The cellIndex property returns the position of a cell in the cells collection of a table row
+          console.log(e.target.cellIndex);
           const descending = sorting.column === column && !sorting.descending;
+          console.log(descending);
+          console.log(data);
           const dataCopy = clone(data);
+          console.log(dataCopy);
           dataCopy.sort((a, b) => {
             if (a[column] === b[column]) {
               return 0;
@@ -42,6 +47,7 @@
                 : -1;
           });
           setData(dataCopy);
+          console.log(column, descending);
           setSorting({column, descending});
         }
 
@@ -51,7 +57,7 @@
               <tr>
                 {headers.map((title, idx) => {
                   if (sorting.column === idx) {
-                    title += sorting.descending ? ' \u2191' : ' \u2193';
+                    title += sorting.descending ? ' \u2191' : ' \u2193'; // up and down arrows respectively
                   }
                   return <th key={idx}>{title}</th>;
                 })}

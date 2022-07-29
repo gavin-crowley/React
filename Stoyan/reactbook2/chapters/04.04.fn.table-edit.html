@@ -19,7 +19,7 @@
       }
 
       const useState = React.useState;
-      function Excel({headers, initialData}) {
+      function Excel({ headers, initialData }) {
         const [data, setData] = useState(initialData);
         const [sorting, setSorting] = useState({
           column: null,
@@ -40,16 +40,17 @@
                 ? 1
                 : -1
               : a[column] > b[column]
-                ? 1
-                : -1;
+              ? 1
+              : -1;
           });
           setData(dataCopy);
-          setSorting({column, descending});
+          setSorting({ column, descending });
         }
 
         function showEditor(e) {
+          console.log(e.target.parentNode.dataset.row);
           setEdit({
-            row: parseInt(e.target.parentNode.dataset.row, 10),
+            row: parseInt(e.target.parentNode.dataset.row, 10), // base 10
             column: e.target.cellIndex,
           });
         }
@@ -58,6 +59,7 @@
           e.preventDefault();
           const input = e.target.firstChild;
           const dataCopy = clone(data);
+          console.log(dataCopy);
           dataCopy[edit.row][edit.column] = input.value;
           setEdit(null);
           setData(dataCopy);
@@ -76,6 +78,7 @@
               </tr>
             </thead>
             <tbody onDoubleClick={showEditor}>
+             
               {data.map((row, rowidx) => (
                 <tr key={rowidx} data-row={rowidx}>
                   {row.map((cell, columnidx) => {
@@ -86,7 +89,7 @@
                     ) {
                       cell = (
                         <form onSubmit={save}>
-                          <input type="text" defaultValue={cell} />
+                          <input type='text' defaultValue={cell} />
                         </form>
                       );
                     }
@@ -147,7 +150,7 @@
 
       ReactDOM.render(
         <Excel headers={headers} initialData={data} />,
-        document.getElementById('app'),
+        document.getElementById('app')
       );
     </script>
   </body>

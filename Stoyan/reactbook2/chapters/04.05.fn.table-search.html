@@ -20,9 +20,9 @@
 
       const useState = React.useState;
 
-      function Excel({headers, initialData}) {
+      function Excel({ headers, initialData }) {
         const [data, setData] = useState(
-          clone(initialData).map((row, idx) => row.concat(idx)),
+          clone(initialData).map((row, idx) => row.concat(idx))
         );
         const [sorting, setSorting] = useState({
           column: null,
@@ -45,11 +45,11 @@
                 ? 1
                 : -1
               : a[column] > b[column]
-                ? 1
-                : -1;
+              ? 1
+              : -1;
           });
           setData(dataCopy);
-          setSorting({column, descending});
+          setSorting({ column, descending });
         }
 
         function showEditor(e) {
@@ -103,7 +103,7 @@
           <tr onChange={filter}>
             {headers.map((_, idx) => (
               <td key={idx}>
-                <input type="text" data-idx={idx} />
+                <input type='text' data-idx={idx} />
               </td>
             ))}
           </tr>
@@ -111,7 +111,7 @@
 
         return (
           <div>
-            <div className="toolbar">
+            <div className='toolbar'>
               <button onClick={toggleSearch}>
                 {search ? 'Hide search' : 'Show search'}
               </button>
@@ -144,7 +144,7 @@
                         ) {
                           cell = (
                             <form onSubmit={save}>
-                              <input type="text" defaultValue={cell} />
+                              <input type='text' defaultValue={cell} />
                             </form>
                           );
                         }
@@ -207,7 +207,7 @@
 
       ReactDOM.render(
         <Excel headers={headers} initialData={data} />,
-        document.getElementById('app'),
+        document.getElementById('app')
       );
     </script>
   </body>
