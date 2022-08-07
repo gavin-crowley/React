@@ -1,15 +1,13 @@
 import { useFetch } from '../../hooks/useFetch'
-import { useLocation } from 'react-router-dom'
 import RecipeList from '../../components/RecipeList'
 
 // styles
-import './Search.css'
+import './Home.css'
 
-export default function Search() {
-
+export default function Home() {
 
   return (
-    <div>
+    <div className="home">
 
     </div>
   )
