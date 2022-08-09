@@ -13,7 +13,6 @@ export default function App() {
         onChange={(event) => {
           setSearchTerm(event.target.value);
         }}
-        value={searchTerm}
       />
       <div>
         {JSONDATA.persons
