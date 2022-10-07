@@ -56,3 +56,42 @@ header {
   color: #f1356d;
   margin-bottom: 8px;
 }
+
+.blog-preview a{
+  text-decoration: none;
+}
+
+.blog-details h2 {
+  font-size: 20px;
+  color:#f1356d;
+  margin-bottom: 10px;
+}
+
+.blog-details div {
+  margin: 20px 0;
+}
+
+.create-page{
+  text-align: center;
+}
+
+.create-page > h2 {
+  color: #f1356d;
+  margin: 2em 0;
+}
+
+.create-page form p {
+  /* text-align: left; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
