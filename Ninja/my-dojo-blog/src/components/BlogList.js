@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 export default function BlogList({blogs, title}) {
    
   return (
-    <>
-    <h2>{title}</h2>
+    <div className='blog-list'>
       {blogs.map((blog) => (
         <div key={blog.id} className='blog-preview'>
           <Link to={`/blogs/${blog.id}`}>
@@ -14,6 +13,6 @@ export default function BlogList({blogs, title}) {
           </Link>
         </div>
       ))}
-    </>
+    </div>
   );
 }
