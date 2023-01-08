@@ -104,3 +104,11 @@ function App() {
 }
 
 export default App;
+
+
+
+// ------------------------------------
+
+// const [todo, setTodo] = useState<string>("")
+// const [todo, setTodo] = useState<string | number>("")
+// const [todo, setTodo] = useState<string[]>("")
